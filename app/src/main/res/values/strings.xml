@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">StudyFlow Dev</string>
+    <string name="menu_dashboard">Dashboard</string>
+    <string name="menu_tecnologias">Tecnologias</string>
+    <string name="menu_metas">Metas</string>
+    <string name="menu_perfil">Perfil</string>
+    <string name="title_add_tecnologia">Cadastrar Tecnologia</string>
+    <string name="hint_nome_tecnologia">Nome da Tecnologia</string>
+    <string name="btn_salvar">Salvar</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="title_add_conteudo">Cadastrar Conteúdo</string>
+    <string name="hint_titulo_conteudo">Título do Conteúdo</string>
+    <string name="hint_descricao_conteudo">Descrição do Conteúdo</string>
+    <string name="title_progresso">Progresso: %1$d%%</string>
+    <string name="msg_tecnologia_obrigatoria">O nome da tecnologia é obrigatório.</string>
+    <string name="msg_conteudo_obrigatorio">O título do conteúdo é obrigatório.</string>
+</resources>
