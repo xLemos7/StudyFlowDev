@@ -296,7 +296,7 @@ A barra de navegação inferior (`BottomNavigationView`) contém 4 opções:
 
 Projeto desenvolvido no âmbito acadêmico para acompanhamento e organização de estudos de desenvolvimento de software:
 
-- **Ana Clara Lemos da Silva** (Matrícula: 202510099) — [GitHub: @xLemos7](https://github.com/xLemos7)
+- **Ana Clara Lemos da Silva** — [GitHub: @xLemos7](https://github.com/xLemos7)
 
 ---
 
