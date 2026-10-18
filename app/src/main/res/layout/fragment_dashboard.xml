@@ -1,116 +1,323 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:fillViewport="true"
+    android:background="@color/bg_app">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Olá, Estudante!"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#333333"
-        android:layout_marginBottom="24dp"/>
-
-    <!-- XP Card -->
-    <com.google.android.material.card.MaterialCardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="4dp"
-        app:cardBackgroundColor="#E3F2FD">
+        android:orientation="vertical"
+        android:padding="20dp">
 
+        <!-- Top Header -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:id="@+id/img_cap"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_cap"
+                android:contentDescription="Ícone de estudos"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/text_greeting"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:text="Olá, Estudante!"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/img_cap"
+                app:layout_constraintEnd_toStartOf="@id/img_sparkle" />
+
+            <TextView
+                android:id="@+id/text_subtitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Continue evoluindo nos seus estudos!"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginTop="2dp"
+                app:layout_constraintTop_toBottomOf="@id/text_greeting"
+                app:layout_constraintStart_toStartOf="@id/text_greeting"
+                app:layout_constraintEnd_toEndOf="@id/text_greeting" />
+
+            <ImageView
+                android:id="@+id/img_sparkle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_sparkle"
+                android:contentDescription="Brilho"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- XP Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#E0E7FF"
+            app:cardBackgroundColor="@color/primary_purple_light">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <FrameLayout
+                    android:id="@+id/icon_xp_container"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_circle_purple"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_star"
+                        android:contentDescription="Estrela XP" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/label_xp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:text="Pontos de Experiência (XP)"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_purple_medium"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/icon_xp_container"
+                    app:layout_constraintEnd_toStartOf="@id/arrow_xp" />
+
+                <TextView
+                    android:id="@+id/value_xp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="1250 XP"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_purple_dark"
+                    android:layout_marginTop="2dp"
+                    app:layout_constraintTop_toBottomOf="@id/label_xp"
+                    app:layout_constraintStart_toStartOf="@id/label_xp"
+                    app:layout_constraintEnd_toStartOf="@id/arrow_xp" />
+
+                <ImageView
+                    android:id="@+id/arrow_xp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_chevron_right"
+                    app:tint="@color/primary_purple_medium"
+                    android:contentDescription="Seta para detalhes"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Streak Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#FFEDD5"
+            app:cardBackgroundColor="@color/orange_light">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <FrameLayout
+                    android:id="@+id/icon_streak_container"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_circle_orange"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_flame"
+                        android:contentDescription="Fogo Sequência" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/label_streak"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:text="Sequência de Estudos"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/orange_primary"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/icon_streak_container"
+                    app:layout_constraintEnd_toStartOf="@id/arrow_streak" />
+
+                <TextView
+                    android:id="@+id/value_streak"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="5 Dias Seguidos"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/orange_dark"
+                    android:layout_marginTop="2dp"
+                    app:layout_constraintTop_toBottomOf="@id/label_streak"
+                    app:layout_constraintStart_toStartOf="@id/label_streak"
+                    app:layout_constraintEnd_toStartOf="@id/arrow_streak" />
+
+                <ImageView
+                    android:id="@+id/arrow_streak"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_chevron_right"
+                    app:tint="@color/orange_primary"
+                    android:contentDescription="Seta para detalhes"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Desafios Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#DCFCE7"
+            app:cardBackgroundColor="@color/green_light">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <FrameLayout
+                    android:id="@+id/icon_desafios_container"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_circle_green"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_trophy"
+                        android:contentDescription="Troféu Desafios" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/label_desafios"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:text="Desafios Concluídos"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/green_primary"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/icon_desafios_container"
+                    app:layout_constraintEnd_toStartOf="@id/arrow_desafios" />
+
+                <TextView
+                    android:id="@+id/value_desafios"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="3 Desafios"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/green_dark"
+                    android:layout_marginTop="2dp"
+                    app:layout_constraintTop_toBottomOf="@id/label_desafios"
+                    app:layout_constraintStart_toStartOf="@id/label_desafios"
+                    app:layout_constraintEnd_toStartOf="@id/arrow_desafios" />
+
+                <ImageView
+                    android:id="@+id/arrow_desafios"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_chevron_right"
+                    app:tint="@color/green_primary"
+                    android:contentDescription="Seta para detalhes"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Motivational Section / Empty State -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:gravity="center"
+            android:layout_marginTop="12dp"
+            android:paddingHorizontal="24dp">
+
+            <ImageView
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@drawable/ic_plant"
+                android:contentDescription="Planta brotando"
+                android:layout_marginBottom="16dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pontos de Experiência (XP)"
-                android:textSize="14sp"
-                android:textColor="#555555"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1250 XP"
-                android:textSize="28sp"
+                android:text="Grandes conquistas começam com pequenos passos!"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#1976D2"
-                android:layout_marginTop="4dp"/>
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-    <!-- Streak Card -->
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="4dp"
-        app:cardBackgroundColor="#FFF3E0">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+                android:textColor="@color/text_primary"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sequência de Estudos"
+                android:text="Continue estudando e veja seu progresso crescer!"
                 android:textSize="14sp"
-                android:textColor="#555555"/>
+                android:textColor="@color/text_secondary"
+                android:gravity="center" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="🔥 5 Dias Seguidos"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="#E65100"
-                android:layout_marginTop="4dp"/>
         </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
 
-    <!-- General Stats -->
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="4dp"
-        app:cardBackgroundColor="#E8F5E9">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Desafios Concluídos"
-                android:textSize="14sp"
-                android:textColor="#555555"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="3 Desafios"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#2E7D32"
-                android:layout_marginTop="4dp"/>
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-</LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

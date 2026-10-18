@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">StudyFlow Dev</string>
     <string name="menu_dashboard">Dashboard</string>
-    <string name="menu_tecnologias">Tecnologias</string>
-    <string name="menu_metas">Metas</string>
+    <string name="menu_tecnologias">Estudos</string>
+    <string name="menu_metas">Desafios</string>
     <string name="menu_perfil">Perfil</string>
     <string name="title_add_tecnologia">Cadastrar Tecnologia</string>
     <string name="hint_nome_tecnologia">Nome da Tecnologia</string>

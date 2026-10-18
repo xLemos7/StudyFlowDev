@@ -1,33 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="16dp">
+    android:fillViewport="true"
+    android:background="@color/bg_app">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="🎯"
-        android:textSize="64sp"
-        android:layout_marginBottom="16dp"/>
+        android:orientation="vertical"
+        android:padding="20dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Minhas Metas de Estudo"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:textColor="#333333"
-        android:layout_marginBottom="8dp"/>
+        <!-- Top Header -->
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Desafios e Metas"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="As metas estarão disponíveis na próxima atualização."
-        android:textSize="14sp"
-        android:textColor="#777777"
-        android:gravity="center"/>
+        <TextView
+            android:id="@+id/text_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Acompanhe seus objetivos e conquistas nos estudos"
+            android:textSize="13sp"
+            android:textColor="@color/text_secondary"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="20dp" />
 
-</LinearLayout>
+        <!-- Metas Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#E0E7FF"
+            app:cardBackgroundColor="@color/primary_purple_light">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <FrameLayout
+                    android:id="@+id/icon_meta_container"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/bg_circle_purple"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_target"
+                        app:tint="@color/white"
+                        android:contentDescription="Alvo Metas" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/label_meta"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:text="Metas em Andamento"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_purple_medium"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/icon_meta_container"
+                    app:layout_constraintEnd_toStartOf="@id/arrow_meta" />
+
+                <TextView
+                    android:id="@+id/value_meta"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="2 Metas Ativas"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_purple_dark"
+                    android:layout_marginTop="2dp"
+                    app:layout_constraintTop_toBottomOf="@id/label_meta"
+                    app:layout_constraintStart_toStartOf="@id/label_meta"
+                    app:layout_constraintEnd_toStartOf="@id/arrow_meta" />
+
+                <ImageView
+                    android:id="@+id/arrow_meta"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_chevron_right"
+                    app:tint="@color/primary_purple_medium"
+                    android:contentDescription="Seta metas"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Empty State / Motivation -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="24dp"
+            android:paddingHorizontal="24dp">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_trophy"
+                app:tint="@color/primary_purple"
+                android:contentDescription="Troféu"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Você está no caminho certo!"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Conclua desafios diários para acumular XP e subir no ranking da comunidade de estudantes!"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
