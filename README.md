@@ -292,11 +292,4 @@ A barra de navegação inferior (`BottomNavigationView`) contém 4 opções:
 
 ---
 
-## 👥 Autores
-
-Projeto desenvolvido no âmbito acadêmico para acompanhamento e organização de estudos de desenvolvimento de software:
-
-
----
-
 Desenvolvido para fins de aprendizado e aprimoramento da jornada em tecnologia! 🚀
